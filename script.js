@@ -33,70 +33,29 @@ submit.addEventListener("click", (e)=> {
 })
 
 getWeather("Delhi")
-       
-const getStaticWethearShanghai = () => {
-    fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Shanghai', options)
-    .then(response => response.json())
-    .then((response) => {
-        console.log(response)
 
-        cloud_pct_shanghai.innerHTML = response.cloud_pct
-        temp_shanghai.innerHTML = response.temp
-        feels_like_shanghai.innerHTML = response.feels_like
-        humidity_shanghai.innerHTML = response.humidity
-        min_temp_shanghai.innerHTML = response.min_temp
-        max_temp_shanghai.innerHTML = response.max_temp
-        wind_speed_shanghai.innerHTML = response.wind_speed
-        wind_degrees_shanghai.innerHTML = response.wind_degrees
-        sunrise_shanghai.innerHTML = response.sunrise
-        sunset_shanghai.innerHTML = response.sunset
-    })
-    .catch(err => console.error(err));
-}
-    
+const getStaticWeather = (city, options) => {
+    fetch(`https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${city}`, options)
+      .then(response => response.json())
+      .then((response) => {
+        console.log(response);
+  
+        // Update the corresponding DOM elements with the retrieved data
+        document.getElementById(`cloud_pct_${city}`).innerHTML = response.cloud_pct;
+        document.getElementById(`temp_${city}`).innerHTML = response.temp;
+        document.getElementById(`feels_like_${city}`).innerHTML = response.feels_like;
+        document.getElementById(`humidity_${city}`).innerHTML = response.humidity;
+        document.getElementById(`min_temp_${city}`).innerHTML = response.min_temp;
+        document.getElementById(`max_temp_${city}`).innerHTML = response.max_temp;
+        document.getElementById(`wind_speed_${city}`).innerHTML = response.wind_speed;
+        document.getElementById(`wind_degrees_${city}`).innerHTML = response.wind_degrees;
+        document.getElementById(`sunrise_${city}`).innerHTML = response.sunrise;
+        document.getElementById(`sunset_${city}`).innerHTML = response.sunset;
+      })
+      .catch(err => console.error(err));
+  };
 
-const getStaticWethearBoston = () => {
-    fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Boston', options)
-    .then(response => response.json())
-    .then((response) => {
-        console.log(response)
-
-        cloud_pct_boston.innerHTML = response.cloud_pct
-        temp_boston.innerHTML = response.temp
-        feels_like_boston.innerHTML = response.feels_like
-        humidity_boston.innerHTML = response.humidity
-        min_temp_boston.innerHTML = response.min_temp
-        max_temp_boston.innerHTML = response.max_temp
-        wind_speed_boston.innerHTML = response.wind_speed
-        wind_degrees_boston.innerHTML = response.wind_degrees
-        sunrise_boston.innerHTML = response.sunrise
-        sunset_boston.innerHTML = response.sunset
-    })
-    .catch(err => console.error(err));
-}
-    
-
-
-const getStaticWethearLucknow = () => {
-    fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Lucknow', options)
-    .then(response => response.json())
-    .then((response) => {
-        console.log(response)
-
-        cloud_pct_Lucknow.innerHTML = response.cloud_pct
-        temp_Lucknow.innerHTML = response.temp
-        feels_like_Lucknow.innerHTML = response.feels_like
-        humidity_Lucknow.innerHTML = response.humidity
-        min_temp_Lucknow.innerHTML = response.min_temp
-        max_temp_Lucknow.innerHTML = response.max_temp
-        wind_speed_Lucknow.innerHTML = response.wind_speed
-        wind_degrees_Lucknow.innerHTML = response.wind_degrees
-        sunrise_Lucknow.innerHTML = response.sunrise
-        sunset_Lucknow.innerHTML = response.sunset
-    })
-    .catch(err => console.error(err));
-}
-    
-getStaticWethearLucknow()
-getStaticWethearBoston()
-getStaticWethearShanghai()      
+  getStaticWeather('shanghai', options);
+  getStaticWeather('Lucknow', options);
+  getStaticWeather('boston', options);
+  

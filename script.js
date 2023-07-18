@@ -55,7 +55,7 @@ const getStaticWeather = (city, options) => {
       .catch(err => console.error(err));
   };
 
-  getStaticWeather('shanghai', options);
-  getStaticWeather('Lucknow', options);
-  getStaticWeather('boston', options);
+getStaticWeather('shanghai', options);
+getStaticWeather('Lucknow', options);
+getStaticWeather('boston', options);
   

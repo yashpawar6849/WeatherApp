@@ -39,8 +39,7 @@ const getStaticWeather = (city, options) => {
       .then(response => response.json())
       .then((response) => {
         console.log(response);
-  
-        // Update the corresponding DOM elements with the retrieved data
+	      
         document.getElementById(`cloud_pct_${city}`).innerHTML = response.cloud_pct;
         document.getElementById(`temp_${city}`).innerHTML = response.temp;
         document.getElementById(`feels_like_${city}`).innerHTML = response.feels_like;

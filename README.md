@@ -2,6 +2,8 @@
 
 This is a Weather App project built using JavaScript, HTML, and CSS. The app allows users to retrieve and display weather information for different cities. It utilizes the Rapid API to fetch real-time weather data such as temperature, wind speed, humidity, sunrise, and sunset time.
 
+![image](https://github.com/SwayamBadhe/WeatherApp/assets/123235851/af51cd62-4fbe-4642-834a-98d9d28d9855)
+
 # Features :-
 
 Search for weather information of specific cities
